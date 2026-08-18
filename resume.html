@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ragavi.T - Resume</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #dfe7ec;
+            color: #263238;
+            padding: 30px;
+        }
+
+        /* =========================
+           A4 RESUME
+        ========================= */
+
+        .resume {
+            width: 210mm;
+            min-height: 297mm;
+            margin: auto;
+            background: white;
+
+            display: grid;
+            grid-template-columns: 32% 68%;
+
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.18);
+        }
+
+
+        /* =========================
+           LEFT COLUMN
+        ========================= */
+
+        .left-column {
+            background: #173f5f;
+            color: white;
+            padding: 35px 25px;
+        }
+
+
+        /* Profile */
+
+        .profile {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .profile-circle {
+            width: 100px;
+            height: 100px;
+
+            margin: auto;
+            margin-bottom: 15px;
+
+            border-radius: 50%;
+
+            background: #2ec4b6;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 30px;
+            font-weight: bold;
+
+            color: white;
+        }
+
+        .profile h1 {
+            font-size: 25px;
+            margin-bottom: 6px;
+        }
+
+        .profile p {
+            color: #b8d8e8;
+            font-size: 13px;
+        }
+
+
+        /* Left Section */
+
+        .left-section {
+            margin-top: 25px;
+        }
+
+        .left-title {
+            font-size: 14px;
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            color: #2ec4b6;
+
+            margin-bottom: 12px;
+
+            padding-bottom: 6px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+
+        /* Personal Details */
+
+        .personal-item {
+            margin-bottom: 12px;
+        }
+
+        .personal-item strong {
+            display: block;
+            font-size: 12px;
+            color: #9edbd5;
+            margin-bottom: 3px;
+        }
+
+        .personal-item span {
+            font-size: 12px;
+            color: #f1f5f9;
+        }
+
+
+        /* Skills */
+
+        .skill {
+            margin-bottom: 13px;
+        }
+
+        .skill-name {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 5px;
+            background: #315a73;
+            border-radius: 5px;
+        }
+
+        .skill-level {
+            height: 5px;
+            background: #2ec4b6;
+            border-radius: 5px;
+        }
+
+
+        /* Languages */
+
+        .language {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            font-size: 12px;
+        }
+
+        .language span:last-child {
+            color: #9edbd5;
+        }
+
+
+        /* =========================
+           RIGHT COLUMN
+        ========================= */
+
+        .right-column {
+            padding: 35px 35px;
+        }
+
+
+        /* Section */
+
+        .section {
+            margin-bottom: 23px;
+        }
+
+
+        .section-title {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-title::before {
+            content: "";
+
+            width: 6px;
+            height: 25px;
+
+            background: #2ec4b6;
+
+            border-radius: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 17px;
+
+            text-transform: uppercase;
+
+            color: #173f5f;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* Summary */
+
+        .summary {
+            font-size: 12.5px;
+            line-height: 1.65;
+
+            color: #555;
+
+            text-align: justify;
+        }
+
+
+        /* Education */
+
+        .education {
+            border-left: 2px solid #2ec4b6;
+
+            padding-left: 15px;
+        }
+
+        .education h3 {
+            font-size: 14px;
+            color: #173f5f;
+            margin-bottom: 5px;
+        }
+
+        .education p {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+
+        /* Projects */
+
+        .project {
+            margin-bottom: 17px;
+
+            padding: 12px 15px;
+
+            background: #f3f8fa;
+
+            border-left: 3px solid #2ec4b6;
+
+            border-radius: 4px;
+        }
+
+        .project h3 {
+            color: #173f5f;
+
+            font-size: 14px;
+
+            margin-bottom: 6px;
+        }
+
+        .project ul {
+            padding-left: 18px;
+        }
+
+        .project li {
+            font-size: 12px;
+
+            color: #555;
+
+            line-height: 1.55;
+
+            margin-bottom: 3px;
+        }
+
+
+        /* Certificates */
+
+        .certificate {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            margin-bottom: 12px;
+        }
+
+        .certificate-icon {
+            width: 28px;
+            height: 28px;
+
+            min-width: 28px;
+
+            background: #2ec4b6;
+
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .certificate h3 {
+            font-size: 13px;
+
+            color: #173f5f;
+
+            margin-bottom: 3px;
+        }
+
+        .certificate p {
+            font-size: 11px;
+
+            color: #666;
+        }
+
+
+        /* =========================
+           TECHNOLOGY TAGS
+        ========================= */
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-top: 8px;
+        }
+
+        .tag {
+            padding: 4px 9px;
+
+            background: #d9f3ef;
+
+            color: #176b63;
+
+            border-radius: 12px;
+
+            font-size: 10px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           PRINT
+        ========================= */
+
+        @media print {
+
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .resume {
+                width: 210mm;
+                min-height: 297mm;
+
+                box-shadow: none;
+            }
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media screen and (max-width: 800px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .resume {
+                width: 100%;
+
+                grid-template-columns: 1fr;
+            }
+
+            .left-column {
+                text-align: center;
+            }
+
+            .personal-item {
+                text-align: left;
+            }
+
+            .language {
+                text-align: left;
+            }
+
+            .right-column {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="resume">
+
+
+    <!-- =================================
+         LEFT COLUMN
+    ================================== -->
+
+    <aside class="left-column">
+
+
+        <!-- Profile -->
+
+        <div class="profile">
+
+            <div class="profile-circle">
+                RT
+            </div>
+
+            <h1>Ragavi.T</h1>
+
+            <p>
+                B.Tech Information Technology
+            </p>
+
+        </div>
+
+
+        <!-- Personal Details -->
+
+        <div class="left-section">
+
+            <div class="left-title">
+                Personal Details
+            </div>
+
+            <div class="personal-item">
+                <strong>Name</strong>
+                <span>Ragavi.T</span>
+            </div>
+
+            <div class="personal-item">
+                <strong>Date of Birth</strong>
+                <span>04/04/2007</span>
+            </div>
+
+            <div class="personal-item">
+                <strong>Degree</strong>
+                <span>B.Tech Information Technology</span>
+            </div>
+
+        </div>
+
+
+        <!-- Skills -->
+
+        <div class="left-section">
+
+            <div class="left-title">
+                Technical Skills
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">Python</div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width:70%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">Java</div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width:70%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">C</div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width:70%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">HTML</div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width:90%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">CSS</div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width:85%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width:80%"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-name">MySQL</div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width:80%"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Languages -->
+
+        <div class="left-section">
+
+            <div class="left-title">
+                Languages
+            </div>
+
+            <div class="language">
+                <span>Tamil</span>
+                <span>Fluent</span>
+            </div>
+
+            <div class="language">
+                <span>English</span>
+                <span>Good</span>
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =================================
+         RIGHT COLUMN
+    ================================== -->
+
+    <main class="right-column">
+
+
+        <!-- Summary -->
+
+        <section class="section">
+
+            <div class="section-title">
+                <h2>Profile</h2>
+            </div>
+
+            <p class="summary">
+                Motivated and hardworking B.Tech Information Technology
+                student with strong programming, frontend development and
+                database knowledge. Interested in software development and
+                building practical applications. Passionate about learning
+                new technologies, solving problems and creating user-friendly
+                solutions.
+            </p>
+
+        </section>
+
+
+
+        <!-- Education -->
+
+        <section class="section">
+
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+
+            <div class="education">
+
+                <h3>
+                    B.Tech Information Technology
+                </h3>
+
+                <p>
+                    Undergraduate Student
+                </p>
+
+                <p>
+                    Information Technology
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Projects -->
+
+        <section class="section">
+
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+
+
+            <!-- Project 1 -->
+
+            <div class="project">
+
+                <h3>Fruit RM360</h3>
+
+                <ul>
+
+                    <li>
+                        Developed an intelligent platform for fruit quality
+                        assessment, prediction and recommendation.
+                    </li>
+
+                    <li>
+                        Focused on fruit quality analysis, by-product
+                        valorization and smart marketplace concepts.
+                    </li>
+
+                    <li>
+                        Designed the application using frontend and database
+                        development concepts.
+                    </li>
+
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">MySQL</span>
+                </div>
+
+            </div>
+
+
+            <!-- Project 2 -->
+
+            <div class="project">
+
+                <h3>Travel Management System</h3>
+
+                <ul>
+
+                    <li>
+                        Designed a travel and tour booking management system.
+                    </li>
+
+                    <li>
+                        Includes tour packages, customer registration,
+                        destinations, travel dates and booking details.
+                    </li>
+
+                    <li>
+                        Applied frontend development and database concepts
+                        to manage travel information.
+                    </li>
+
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">MySQL</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Certificates -->
+
+        <section class="section">
+
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+
+
+            <div class="certificate">
+
+                <div class="certificate-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3>
+                        Full Stack Development Internship
+                    </h3>
+
+                    <p>
+                        Certificate of Completion
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <div class="certificate-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3>
+                        Cybersecurity
+                    </h3>
+
+                    <p>
+                        TATA
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section">
+
+            <div class="section-title">
+                <h2>Programming & Development</h2>
+            </div>
+
+            <div class="tags">
+
+                <span class="tag">Python</span>
+                <span class="tag">Java</span>
+                <span class="tag">C</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">MySQL</span>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+</body>
+
+</html>
